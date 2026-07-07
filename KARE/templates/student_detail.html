@@ -1,0 +1,256 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+<div class="card shadow">
+
+<div class="card-header bg-primary text-white">
+
+<h2 class="text-center">
+
+Student Profile
+
+</h2>
+
+</div>
+
+<div class="card-body">
+
+<div class="row">
+
+<div class="col-md-4 text-center">
+
+{% if student.photo %}
+
+<img src="{{ student.photo.url }}"
+class="img-fluid rounded-circle border"
+style="width:220px;height:220px;object-fit:cover;">
+
+{% else %}
+
+<img src="https://via.placeholder.com/220"
+class="img-fluid rounded-circle">
+
+{% endif %}
+
+</div>
+
+<div class="col-md-8">
+
+<table class="table table-bordered">
+
+<tr>
+
+<th>Name</th>
+
+<td>{{ student.name }}</td>
+
+</tr>
+
+<tr>
+
+<th>Roll Number</th>
+
+<td>{{ student.roll_number }}</td>
+
+</tr>
+
+<tr>
+
+<th>Department</th>
+
+<td>{{ student.department }}</td>
+
+</tr>
+
+<tr>
+
+<th>Year</th>
+
+<td>{{ student.year }}</td>
+
+</tr>
+
+<tr>
+
+<th>Email</th>
+
+<td>{{ student.email }}</td>
+
+</tr>
+
+<tr>
+
+<th>Phone</th>
+
+<td>{{ student.phone }}</td>
+
+</tr>
+
+</table>
+
+<a href="/students/"
+class="btn btn-secondary">
+
+⬅ Back
+
+</a>
+
+<a href="/students/edit/{{ student.id }}/"
+class="btn btn-warning">
+
+✏ Edit
+
+</a>
+
+<a href="/students/delete/{{ student.id }}/"
+class="btn btn-danger">
+
+🗑 Delete
+<a href="/students/report-card/{{ student.id }}/"
+class="btn btn-success">
+
+📄 Report Card
+
+</a>
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<hr>
+
+<h4>Attendance</h4>
+
+<table class="table table-striped">
+
+<tr>
+
+<th>Date</th>
+
+<th>Status</th>
+
+</tr>
+
+{% for item in attendance %}
+
+<tr>
+
+<td>{{ item.date }}</td>
+
+<td>{{ item.status }}</td>
+
+</tr>
+
+{% empty %}
+
+<tr>
+
+<td colspan="2">
+
+No Attendance Found
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+<hr>
+
+<h4>Marks</h4>
+
+<table class="table table-striped">
+
+<tr>
+
+<th>Subject</th>
+
+<th>Total</th>
+
+<th>Grade</th>
+
+</tr>
+
+{% for item in marks %}
+
+<tr>
+
+<td>{{ item.subject }}</td>
+
+<td>{{ item.total }}</td>
+
+<td>{{ item.grade }}</td>
+
+</tr>
+
+{% empty %}
+
+<tr>
+
+<td colspan="3">
+
+No Marks Available
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+<hr>
+
+<h4>Timetable</h4>
+
+<table class="table table-striped">
+
+<tr>
+
+<th>Day</th>
+
+<th>Subject</th>
+
+<th>Time</th>
+
+</tr>
+
+{% for item in timetable %}
+
+<tr>
+
+<td>{{ item.day }}</td>
+
+<td>{{ item.subject }}</td>
+
+<td>{{ item.time }}</td>
+
+</tr>
+
+{% empty %}
+
+<tr>
+
+<td colspan="3">
+
+No Timetable Found
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

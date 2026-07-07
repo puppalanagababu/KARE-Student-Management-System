@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+<h2 class="text-center mb-4">
+
+📅 Attendance Report
+
+</h2>
+
+<table class="table table-bordered table-hover">
+
+<thead class="table-dark">
+
+<tr>
+
+<th>Student</th>
+
+<th>Present</th>
+
+<th>Absent</th>
+
+<th>Total</th>
+
+<th>Attendance %</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for item in report %}
+
+<tr>
+
+<td>{{ item.student.name }}</td>
+
+<td>{{ item.present }}</td>
+
+<td>{{ item.absent }}</td>
+
+<td>{{ item.total }}</td>
+
+<td width="250">
+
+<div class="progress">
+  <div class="progress-bar bg-{{ item.color }}"
+       role="progressbar"
+       data-width="{{ item.percentage }}%">
+       {{ item.percentage }}%
+  </div>
+</div>
+
+
+</td>
+
+<td>
+
+<span class="badge bg-{{ item.color }}">
+
+{{ item.status }}
+
+</span>
+
+</td>
+
+</tr>
+
+{% empty %}
+
+<tr>
+
+<td colspan="6" class="text-center">
+
+No Attendance Data Found
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+{% endblock %}

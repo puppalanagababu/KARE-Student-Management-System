@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 style="text-align:center;">Edit Student</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+
+<label class="form-label">
+
+Change Photo
+
+</label>
+
+<input
+type="file"
+name="photo"
+class="form-control">
+
+</div>
+
+{% csrf_token %}
+
+<div class="mb-3">
+    <label>Student Photo</label>
+    <input type="file" name="photo" class="form-control">
+</div>
+
+
+<input type="text" name="name" value="{{ student.name }}"><br><br>
+
+<input type="text" name="roll_number" value="{{ student.roll_number }}"><br><br>
+
+<input type="text" name="department" value="{{ student.department }}"><br><br>
+
+<input type="number" name="year" value="{{ student.year }}"><br><br>
+
+<input type="email" name="email" value="{{ student.email }}"><br><br>
+
+<input type="text" name="phone" value="{{ student.phone }}"><br><br>
+
+<button type="submit">Update Student</button>
+
+</form>
+
+{% endblock %}

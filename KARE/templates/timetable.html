@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 style="text-align:center;">Student Timetable</h2>
+
+<table border="1"
+       cellpadding="10"
+       cellspacing="0"
+       style="width:90%;margin:auto;">
+
+<tr style="background:#002147;color:white;">
+
+<th>Student</th>
+
+<th>Day</th>
+
+<th>Subject</th>
+
+<th>Time</th>
+
+</tr>
+
+{% for item in timetable %}
+
+<tr>
+
+<td>{{ item.student.name }}</td>
+
+<td>{{ item.day }}</td>
+
+<td>{{ item.subject }}</td>
+
+<td>{{ item.time }}</td>
+
+</tr>
+
+{% empty %}
+
+<tr>
+
+<td colspan="4" style="text-align:center;">
+
+No Timetable Available
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

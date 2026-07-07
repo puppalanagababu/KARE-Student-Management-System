@@ -1,0 +1,183 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero">
+
+    <img src="{% static 'images/banner.jpg' %}" alt="KARE Banner" class="banner">
+
+    <h2>Welcome to KARE Portal</h2>
+
+    <p>
+        Kalasalingam Academy of Research and Education
+    </p>
+
+    <a href="/academics/" class="btn">Explore Courses</a>
+
+    <a href="/admissions/" class="btn">Apply Now</a>
+
+</section>
+
+<!-- About Section -->
+<section class="departments">
+
+    <h2>Our Departments</h2>
+
+    <div class="department-container">
+
+        {% for department in departments %}
+
+        <div class="department-card">
+
+            <h3>{{ department.name }}</h3>
+
+            <p>{{ department.description }}</p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+<!-- Placement Partners -->
+
+<section class="placements">
+
+    <h2>Placement Partners</h2>
+
+    <div class="placement-container">
+
+        <div class="placement-card">Microsoft</div>
+
+        <div class="placement-card">Google</div>
+
+        <div class="placement-card">Amazon</div>
+
+        <div class="placement-card">Infosys</div>
+
+        <div class="placement-card">TCS</div>
+
+        <div class="placement-card">Wipro</div>
+
+    </div>
+
+</section>
+<!-- Campus Gallery -->
+
+<section class="gallery">
+
+    <h2>Campus Gallery</h2>
+
+    <div class="gallery-container">
+
+        <img src="{% static 'images/campus1.jpg' %}" alt="Campus 1">
+
+        <img src="{% static 'images/campus2.jpg' %}" alt="Campus 2">
+
+        <img src="{% static 'images/campus3.jpg' %}" alt="Campus 3">
+
+        <img src="{% static 'images/campus4.jpg' %}" alt="Campus 4">
+
+        <img src="{% static 'images/campus5.jpg' %}" alt="Campus 5">
+
+        <img src="{% static 'images/campus6.jpg' %}" alt="Campus 6">
+
+    </div>
+
+</section>
+<!-- Contact Section -->
+
+<section class="contact">
+
+    <h2>Contact Us</h2>
+
+    <form>
+
+        <input type="text" placeholder="Enter Your Name">
+
+        <input type="email" placeholder="Enter Your Email">
+
+        <input type="text" placeholder="Enter Your Phone Number">
+
+        <textarea rows="6" placeholder="Enter Your Message"></textarea>
+
+        <button type="submit">Send Message</button>
+
+    </form>
+
+</section>
+<!-- Schools Section -->
+
+<section class="schools">
+
+    <h2>Our Schools</h2>
+
+    <div class="school-container">
+
+        <div class="card">
+            <h3>School of Computing</h3>
+            <p>Computer Science & Engineering</p>
+        </div>
+
+        <div class="card">
+            <h3>School of AI & ML</h3>
+            <p>Artificial Intelligence & Machine Learning</p>
+        </div>
+
+        <div class="card">
+            <h3>School of ECE</h3>
+            <p>Electronics & Communication Engineering</p>
+        </div>
+
+        <div class="card">
+            <h3>School of Mechanical</h3>
+            <p>Mechanical Engineering</p>
+        </div>
+
+        <div class="card">
+            <h3>School of Civil</h3>
+            <p>Civil Engineering</p>
+        </div>
+
+        <div class="card">
+            <h3>School of Agriculture</h3>
+            <p>Agricultural Engineering</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Latest News -->
+<section class="news">
+
+    <h2>Latest News</h2>
+
+    <div class="news-container">
+
+        {% for item in news %}
+
+        <div class="news-card">
+
+            <h3>{{ item.title }}</h3>
+
+            <p>{{ item.description }}</p>
+
+            <small>{{ item.date }}</small>
+
+        </div>
+
+        {% empty %}
+
+        <p>No news available.</p>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+{% endblock %}
