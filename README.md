@@ -1,2 +1,39 @@
-# KARE-Student-Management-System
-A full-featured Student Management System built using Django, Python, Bootstrap, and SQLite with authentication, student CRUD, attendance tracking, marks management, timetable, dashboard, report cards, PDF/Excel export, and admin customization.
+# 🎓 KARE Student Management System
+
+A full-stack web application developed using Django for managing students, attendance, marks, timetables, and academic records.
+
+## 🚀 Features
+
+- User Authentication (Login/Register)
+- Role-Based Access
+- Student CRUD Operations
+- Student Photo Upload
+- Attendance Management
+- Attendance Report
+- Marks Management
+- Timetable Management
+- Dashboard with Statistics
+- Report Card
+- PDF Export
+- Excel Export
+- Admin Panel
+- Password Reset
+
+## 🛠 Tech Stack
+
+- Python
+- Django
+- SQLite
+- HTML
+- CSS
+- Bootstrap
+- JavaScript
+- Chart.js
+
+## 📸 Screenshots
+
+(Add screenshots here)
+
+## 👨‍💻 Developer
+
+Puppala Naga Babu
