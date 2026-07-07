@@ -30,9 +30,6 @@ A full-stack web application developed using Django for managing students, atten
 - JavaScript
 - Chart.js
 
-## 📸 Screenshots
-
-(Add screenshots here)
 
 ## 👨‍💻 Developer
 
